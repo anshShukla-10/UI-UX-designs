@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="pt-40 pb-20 overflow-hidden relative min-h-screen flex flex-col justify-center">
+    <section id="home" className="pt-32 lg:pt-40 pb-20 overflow-hidden relative min-h-screen flex flex-col justify-center">
       {/* Edge Glows - Expanded for full effect */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[40vw] h-[70vh] bg-brand-500/15 blur-[150px] rounded-full -translate-x-1/2 pointer-events-none" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[40vw] h-[70vh] bg-brand-500/15 blur-[150px] rounded-full translate-x-1/2 pointer-events-none" />
@@ -18,15 +18,15 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="max-w-5xl mx-auto my-auto pt-10 pb-8"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-900/30 border border-brand-500/30 text-brand-400 font-bold text-sm md:text-base mb-8">
-            <span className="relative flex h-2.5 w-2.5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-900/30 border border-brand-500/30 text-brand-400 font-bold text-xs sm:text-sm md:text-base mb-6 md:mb-8">
+            <span className="relative flex h-2 sm:h-2.5 w-2 sm:w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-500"></span>
+              <span className="relative inline-flex rounded-full h-2 sm:h-2.5 w-2 sm:w-2.5 bg-brand-500"></span>
             </span>
             Sector 8, Chandigarh • Premium Facility
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-[7.5rem] font-black tracking-tighter text-white leading-[0.95] mb-8 drop-shadow-2xl">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-black tracking-tighter text-white leading-[1] md:leading-[0.95] mb-6 md:mb-8 drop-shadow-2xl">
             CHANDIGARH'S<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-400 to-brand-600 filter drop-shadow-[0_0_20px_rgba(212,255,62,0.3)]">ELITE</span> FITNESS<br/>
             DESTINATION
