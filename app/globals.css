@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass {
+    @apply bg-black/80 border border-gray-800 rounded-full backdrop-blur-xl;
+  }
+  .glow-bg {
+    background: radial-gradient(circle at 50% 50%, rgba(212, 255, 62, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  }
+  .card-shadow {
+    @apply shadow-none transition-transform duration-500 hover:-translate-y-1;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Hide scrollbar for marquee if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
