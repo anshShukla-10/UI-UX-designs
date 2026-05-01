@@ -19,7 +19,7 @@ export default function Navbar() {
                 <path d="M6 5V19M18 5V19M4 8H8M4 16H8M16 8H20M16 16H20M8 12H16M2 12H4M20 12H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <span className="font-black text-3xl tracking-tighter text-white uppercase">Chandigarh Fitness</span>
+            <span className="font-black text-xl sm:text-2xl md:text-3xl tracking-tighter text-white uppercase">Chandigarh Fitness</span>
           </Link>
         </div>
         
