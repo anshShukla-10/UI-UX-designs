@@ -38,7 +38,7 @@ export default function HeroSection() {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button className="bg-brand-500 hover:bg-brand-400 text-black px-12 py-5 rounded-full font-black text-xl md:text-2xl transition-all hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(212,255,62,0.4)] w-full sm:w-auto uppercase tracking-wide">
-              Join WAO Gym
+              Join Chandigarh Fitness
             </button>
             <button className="bg-transparent border-2 border-gray-600 hover:border-gray-400 hover:bg-gray-900 text-white px-12 py-5 rounded-full font-bold text-xl md:text-2xl transition-all hover:-translate-y-1 w-full sm:w-auto uppercase tracking-wide">
               Book a Free Tour

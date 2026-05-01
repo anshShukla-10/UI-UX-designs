@@ -14,7 +14,7 @@ export default function BentoGrid() {
             More Than Just A Gym
           </h2>
           <p className="text-2xl text-gray-400">
-            We built WAO Gym to be Chandigarh's ultimate fitness sanctuary. Everything you need to transform your body and mind under one roof.
+            We built Chandigarh Fitness to be Chandigarh's ultimate fitness sanctuary. Everything you need to transform your body and mind under one roof.
           </p>
         </div>
 

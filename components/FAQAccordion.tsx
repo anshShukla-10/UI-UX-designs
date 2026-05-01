@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "What are your opening hours?",
-    answer: "WAO Gym is open 24/7 for VIP Unlimited members. For Off-Peak pass holders, access is restricted to 10:00 AM - 4:00 PM."
+    answer: "Chandigarh Fitness is open 24/7 for VIP Unlimited members. For Off-Peak pass holders, access is restricted to 10:00 AM - 4:00 PM."
   },
   {
     question: "Do you have parking available?",

@@ -8,7 +8,7 @@ const testimonials = [
     name: "Aarav Sharma",
     role: "Sector 8 Resident",
     image: "https://i.pravatar.cc/150?img=11",
-    text: "I've tried every gym in Chandigarh. WAO Gym is on another level. The equipment is pristine and the community is incredibly motivating.",
+    text: "I've tried every gym in Chandigarh. Chandigarh Fitness is on another level. The equipment is pristine and the community is incredibly motivating.",
   },
   {
     name: "Neha Gupta",
@@ -26,7 +26,7 @@ const testimonials = [
     name: "Priya Patel",
     role: "Working Professional",
     image: "https://i.pravatar.cc/150?img=1",
-    text: "The recovery lounge is a godsend after a long day at work. WAO Gym isn't just a place to sweat, it's my daily escape.",
+    text: "The recovery lounge is a godsend after a long day at work. Chandigarh Fitness isn't just a place to sweat, it's my daily escape.",
   }
 ];
 

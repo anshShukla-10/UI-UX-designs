@@ -34,7 +34,7 @@ export default function FooterCTA() {
                   <path d="M6 5V19M18 5V19M4 8H8M4 16H8M16 8H20M16 16H20M8 12H16M2 12H4M20 12H22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <span className="font-black text-4xl tracking-tighter text-white uppercase">WAO Gym</span>
+              <span className="font-black text-4xl tracking-tighter text-white uppercase">Chandigarh Fitness</span>
             </Link>
             <p className="text-gray-400 text-lg mb-8 max-w-md">
               Chandigarh's premium fitness sanctuary. State-of-the-art equipment, expert coaching, and a community built on hard work.
@@ -42,7 +42,7 @@ export default function FooterCTA() {
             <div className="flex flex-col gap-4 text-gray-400 font-medium">
               <div className="flex items-center gap-3"><MapPin className="w-5 h-5 text-brand-500" /> Sector 8, Chandigarh 160009</div>
               <div className="flex items-center gap-3"><Phone className="w-5 h-5 text-brand-500" /> +91 98765 43210</div>
-              <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-brand-500" /> hello@waogym.com</div>
+              <div className="flex items-center gap-3"><Mail className="w-5 h-5 text-brand-500" /> hello@chandigarhfitness.com</div>
             </div>
           </div>
           
@@ -69,14 +69,14 @@ export default function FooterCTA() {
           <div>
             <h4 className="font-black text-xl text-white mb-6 uppercase">Follow Us</h4>
             <a href="#" className="flex items-center gap-3 text-gray-400 text-lg hover:text-brand-400 transition-colors">
-              <Instagram className="w-6 h-6" /> @waogymchd
+              <Instagram className="w-6 h-6" /> @chandigarhfitness
             </a>
           </div>
         </div>
 
         <div className="pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-600 text-sm font-medium">
-            © {new Date().getFullYear()} WAO Gym Chandigarh. All rights reserved.
+            © {new Date().getFullYear()} Chandigarh Fitness. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <span className="flex items-center gap-2 text-gray-500 font-bold uppercase tracking-wider">

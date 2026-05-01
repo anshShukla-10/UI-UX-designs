@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "WAO Gym | Chandigarh's Premium Fitness Community",
+  title: "Chandigarh Fitness | Chandigarh's Premium Fitness Community",
   description: "A premium fitness community in Chandigarh designed to make your journey fun and social.",
 };
 
