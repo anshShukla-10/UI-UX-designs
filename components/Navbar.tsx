@@ -16,20 +16,23 @@ export default function Navbar() {
 
   useGSAP(
     () => {
-      // Smooth initial reveal animation
-      gsap.fromTo(
-        navRef.current,
-        { y: -30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }
-      );
+      // Smooth reveal from hidden initial CSS state
+      gsap.to(navRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: "power2.out",
+      });
 
-      // Stagger nav links
       if (linksRef.current) {
-        gsap.fromTo(
-          linksRef.current.children,
-          { y: -10, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.5, stagger: 0.05, ease: "power2.out", delay: 0.2 }
-        );
+        gsap.to(linksRef.current.children, {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: "power2.out",
+          delay: 0.1,
+        });
       }
     },
     { scope: navRef }
@@ -52,7 +55,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 w-[92%] sm:w-[95%] max-w-7xl z-50 bg-black/85 border border-white/10 rounded-full px-4 sm:px-8 py-1.5 sm:py-2 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
+      className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 w-[92%] sm:w-[95%] max-w-7xl z-50 bg-black/85 border border-white/10 rounded-full px-4 sm:px-8 py-1.5 sm:py-2 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] opacity-0 -translate-y-6 will-change-transform"
     >
       <div className="flex justify-between items-center h-16 sm:h-20 md:h-24">
         <div className="flex-shrink-0 flex items-center">
@@ -63,7 +66,6 @@ export default function Navbar() {
             className="flex items-center gap-2 sm:gap-3 group transition-transform duration-200"
           >
             <div className="logo-icon w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-brand-500 transition-colors">
-              {/* Gym Dumbbell/Weight Icon */}
               <svg
                 width="32"
                 height="32"
@@ -91,35 +93,35 @@ export default function Navbar() {
           <Link
             href="#home"
             onClick={(e) => handleNavClick(e, "#home")}
-            className="text-brand-500 font-bold text-base xl:text-lg transition-colors hover:text-brand-400 py-1"
+            className="opacity-0 -translate-y-2 text-brand-500 font-bold text-base xl:text-lg transition-colors hover:text-brand-400 py-1"
           >
             Home
           </Link>
           <Link
             href="#facilities"
             onClick={(e) => handleNavClick(e, "#facilities")}
-            className="text-gray-300 hover:text-white font-bold text-base xl:text-lg transition-colors py-1 hover:-translate-y-0.5 transform duration-150"
+            className="opacity-0 -translate-y-2 text-gray-300 hover:text-white font-bold text-base xl:text-lg transition-colors py-1 hover:-translate-y-0.5 transform duration-150"
           >
             Facilities
           </Link>
           <Link
             href="#classes"
             onClick={(e) => handleNavClick(e, "#classes")}
-            className="text-gray-300 hover:text-white font-bold text-base xl:text-lg transition-colors py-1 hover:-translate-y-0.5 transform duration-150"
+            className="opacity-0 -translate-y-2 text-gray-300 hover:text-white font-bold text-base xl:text-lg transition-colors py-1 hover:-translate-y-0.5 transform duration-150"
           >
             Classes
           </Link>
           <Link
             href="#pricing"
             onClick={(e) => handleNavClick(e, "#pricing")}
-            className="text-gray-300 hover:text-white font-bold text-base xl:text-lg transition-colors py-1 hover:-translate-y-0.5 transform duration-150"
+            className="opacity-0 -translate-y-2 text-gray-300 hover:text-white font-bold text-base xl:text-lg transition-colors py-1 hover:-translate-y-0.5 transform duration-150"
           >
             Membership
           </Link>
           <Link
             href="#faq"
             onClick={(e) => handleNavClick(e, "#faq")}
-            className="text-gray-300 hover:text-white font-bold text-base xl:text-lg transition-colors py-1 hover:-translate-y-0.5 transform duration-150"
+            className="opacity-0 -translate-y-2 text-gray-300 hover:text-white font-bold text-base xl:text-lg transition-colors py-1 hover:-translate-y-0.5 transform duration-150"
           >
             FAQ
           </Link>
