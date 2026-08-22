@@ -9,18 +9,43 @@
   .glow-bg {
     background: radial-gradient(circle at 50% 50%, rgba(212, 255, 62, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
   }
-  .card-shadow {
-    @apply shadow-none transition-transform duration-500 hover:-translate-y-1;
-  }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 body {
   overflow-x: hidden;
   background-color: #000000;
   color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hide scrollbar for marquee if needed */
+/* Hardware accelerated smooth marquee */
+.animate-marquee {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Hide scrollbars */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

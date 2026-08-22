@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Chandigarh Fitness | Chandigarh's Premium Fitness Community",
-  description: "A premium fitness community in Chandigarh designed to make your journey fun and social.",
+  title: "ELevana Fitness | Premier Fitness Sanctuary in Aashiana, Lucknow",
+  description: "A premier luxury fitness sanctuary in Aashiana, Lucknow equipped with world-class facilities, elite coaches, and a vibrant community.",
 };
-
 
 export default function RootLayout({
   children,
@@ -16,9 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth dark">
+    <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased bg-darkbg text-white`}>
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

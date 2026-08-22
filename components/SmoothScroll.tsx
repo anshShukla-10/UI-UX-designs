@@ -1,43 +1,69 @@
 "use client";
 
-import React, { useRef, useState, useCallback, useLayoutEffect } from "react";
-import { useScroll, useTransform, useSpring, motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { ReactLenis, useLenis } from "lenis/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "lenis/dist/lenis.css";
 
-const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [pageHeight, setPageHeight] = useState(0);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
-  const resizePageHeight = useCallback((entries: ResizeObserverEntry[]) => {
-    for (let entry of entries) {
-      setPageHeight(entry.contentRect.height);
-    }
+function GlobalSmoothAnchor() {
+  const lenis = useLenis();
+
+  useEffect(() => {
+    if (!lenis) return;
+
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest("a");
+      if (!target) return;
+
+      const href = target.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        const el = document.querySelector(href);
+        if (el) {
+          e.preventDefault();
+          lenis.scrollTo(href, {
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          });
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+    return () => {
+      document.removeEventListener("click", handleAnchorClick);
+    };
+  }, [lenis]);
+
+  return null;
+}
+
+export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    // Refresh ScrollTrigger after DOM has fully settled
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  useLayoutEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => resizePageHeight(entries));
-    if (scrollRef.current) {
-      resizeObserver.observe(scrollRef.current);
-    }
-    return () => resizeObserver.disconnect();
-  }, [scrollRef, resizePageHeight]);
-
-  const { scrollY } = useScroll();
-  const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight]);
-  const physics = { damping: 15, mass: 0.27, stiffness: 55 };
-  const spring = useSpring(transform, physics);
-
   return (
-    <>
-      <motion.div
-        ref={scrollRef}
-        style={{ y: spring }}
-        className="fixed top-0 left-0 w-full overflow-hidden will-change-transform"
-      >
-        {children}
-      </motion.div>
-      <div style={{ height: pageHeight }} />
-    </>
+    <ReactLenis
+      root
+      options={{
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        touchMultiplier: 1.5,
+      }}
+    >
+      <GlobalSmoothAnchor />
+      {children}
+    </ReactLenis>
   );
-};
-
-export default SmoothScroll;
+}
