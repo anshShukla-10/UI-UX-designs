@@ -82,7 +82,7 @@ export default function HeroSection() {
     <section
       ref={containerRef}
       id="home"
-      className="pt-24 sm:pt-36 lg:pt-40 pb-10 sm:pb-20 overflow-hidden relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center select-none"
+      className="pt-20 sm:pt-36 lg:pt-40 pb-6 sm:pb-20 overflow-hidden relative min-h-0 sm:min-h-screen flex flex-col justify-center select-none"
     >
       {/* High-performance CSS Radial Gradients */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-[radial-gradient(circle,rgba(212,255,62,0.1)_0%,transparent_70%)] -translate-x-1/2 pointer-events-none" />
@@ -90,11 +90,11 @@ export default function HeroSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] sm:w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_top,rgba(212,255,62,0.08)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center text-center relative z-10 w-full">
-        <div className="max-w-5xl mx-auto my-auto pt-4 sm:pt-10 pb-4 sm:pb-8">
+        <div className="max-w-5xl mx-auto my-auto pt-2 sm:pt-10 pb-2 sm:pb-8">
           {/* Main Hero Heading */}
           <h1
             ref={titleRef}
-            className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-black tracking-tighter text-white leading-[1.08] sm:leading-[0.95] mb-4 sm:mb-8"
+            className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-black tracking-tighter text-white leading-[1.08] sm:leading-[0.95] mb-3 sm:mb-8"
           >
             <span className="hero-line block opacity-0 translate-y-8 will-change-transform">LUCKNOW&apos;S</span>
             <span className="hero-line block text-transparent bg-clip-text bg-gradient-to-br from-brand-300 via-brand-500 to-brand-600 opacity-0 translate-y-8 will-change-transform">
@@ -105,10 +105,10 @@ export default function HeroSection() {
 
           <p
             ref={descRef}
-            className="text-sm sm:text-xl md:text-2xl text-gray-400 mb-6 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-normal px-2 opacity-0 translate-y-5 will-change-transform"
+            className="text-xs sm:text-xl md:text-2xl text-gray-400 mb-4 sm:mb-12 max-w-3xl mx-auto leading-relaxed font-normal px-2 opacity-0 translate-y-5 will-change-transform"
           >
             <span className="sm:hidden">
-              State-of-the-art equipment & elite personal training in Aashiana, Lucknow. Stop settling for ordinary.
+              State-of-the-art equipment & elite personal training in Aashiana, Lucknow.
             </span>
             <span className="hidden sm:inline">
               State-of-the-art biomechanical equipment, elite personal training, and Lucknow&apos;s most passionate fitness community in Aashiana. Stop settling for ordinary.
@@ -117,31 +117,31 @@ export default function HeroSection() {
 
           <div
             ref={ctaRef}
-            className="flex flex-col sm:flex-row gap-3.5 sm:gap-6 justify-center items-center w-full max-w-xs sm:max-w-none mx-auto"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center items-center w-full max-w-xs sm:max-w-none mx-auto"
           >
             <MagneticButton strength={0.15} textStrength={0.08} className="w-full sm:w-auto opacity-0 translate-y-4 will-change-transform">
               <Link
                 href="#pricing"
-                className="bg-brand-500 hover:bg-brand-400 text-black px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-black text-base sm:text-xl md:text-2xl transition-all hover:-translate-y-0.5 shadow-[0_0_30px_rgba(212,255,62,0.35)] hover:shadow-[0_0_45px_rgba(212,255,62,0.55)] w-full sm:w-auto uppercase tracking-wide flex items-center justify-center gap-2.5 sm:gap-3 group active:scale-95 text-center"
+                className="bg-brand-500 hover:bg-brand-400 text-black px-5 py-3 sm:px-12 sm:py-5 rounded-full font-black text-sm sm:text-xl md:text-2xl transition-all hover:-translate-y-0.5 shadow-[0_0_30px_rgba(212,255,62,0.35)] hover:shadow-[0_0_45px_rgba(212,255,62,0.55)] w-full sm:w-auto uppercase tracking-wide flex items-center justify-center gap-2 sm:gap-3 group active:scale-95 text-center"
               >
                 Join ELevana Fitness
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight className="w-4 h-4 sm:w-6 sm:h-6 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </MagneticButton>
 
             <Link
               href="#facilities"
-              className="opacity-0 translate-y-4 will-change-transform bg-black/60 border-2 border-gray-700 hover:border-brand-500/60 hover:bg-gray-900/80 text-white px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-bold text-base sm:text-xl md:text-2xl transition-all hover:-translate-y-0.5 w-full sm:w-auto uppercase tracking-wide block active:scale-95 text-center"
+              className="opacity-0 translate-y-4 will-change-transform bg-black/60 border-2 border-gray-700 hover:border-brand-500/60 hover:bg-gray-900/80 text-white px-5 py-3 sm:px-12 sm:py-5 rounded-full font-bold text-sm sm:text-xl md:text-2xl transition-all hover:-translate-y-0.5 w-full sm:w-auto uppercase tracking-wide block active:scale-95 text-center"
             >
               Book a Free Tour
             </Link>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator (Hidden on mobile to save vertical space) */}
         <div
           ref={scrollIndicatorRef}
-          className="mt-auto pb-2 sm:pb-4 flex flex-col items-center gap-1.5 sm:gap-2 opacity-0 translate-y-3 will-change-transform"
+          className="mt-auto pb-2 sm:pb-4 hidden sm:flex flex-col items-center gap-1.5 sm:gap-2 opacity-0 translate-y-3 will-change-transform"
         >
           <span className="text-gray-500 text-[10px] sm:text-sm font-bold tracking-widest uppercase">
             Scroll To Explore
