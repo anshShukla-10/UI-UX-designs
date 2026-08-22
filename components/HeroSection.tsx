@@ -5,11 +5,10 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import MagneticButton from "./MagneticButton";
 import Link from "next/link";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -18,17 +17,6 @@ export default function HeroSection() {
   useGSAP(
     () => {
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-      // Badge pop
-      if (badgeRef.current) {
-        tl.to(badgeRef.current, {
-          scale: 1,
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          delay: 0.05,
-        });
-      }
 
       // Title lines stagger
       if (titleRef.current) {
@@ -42,7 +30,7 @@ export default function HeroSection() {
             stagger: 0.08,
             ease: "power3.out",
           },
-          "-=0.3"
+          0.1
         );
       }
 
@@ -103,19 +91,6 @@ export default function HeroSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col justify-center text-center relative z-10 w-full">
         <div className="max-w-5xl mx-auto my-auto pt-4 sm:pt-10 pb-4 sm:pb-8">
-          {/* Location Badge */}
-          <div
-            ref={badgeRef}
-            className="inline-flex items-center gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-brand-950/40 border border-brand-500/30 text-brand-400 font-bold text-[11px] sm:text-sm md:text-base mb-4 sm:mb-8 shadow-[0_0_15px_rgba(212,255,62,0.1)] opacity-0 -translate-y-3 scale-95 will-change-transform"
-          >
-            <span className="relative flex h-2 sm:h-2.5 w-2 sm:w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 sm:h-2.5 w-2 sm:w-2.5 bg-brand-500"></span>
-            </span>
-            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-400 inline" />
-            <span>Aashiana, Lucknow • Premium Facility</span>
-          </div>
-
           {/* Main Hero Heading */}
           <h1
             ref={titleRef}

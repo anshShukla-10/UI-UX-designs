@@ -31,12 +31,12 @@ const config: Config = {
         sans: ['var(--font-inter)', 'sans-serif'],
       },
       animation: {
-        marquee: "marquee 50s linear infinite",
+        marquee: "marquee 35s linear infinite",
       },
       keyframes: {
         marquee: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-100%)" },
+          "0%": { transform: "translate3d(0, 0, 0)" },
+          "100%": { transform: "translate3d(-50%, 0, 0)" },
         },
       },
     },

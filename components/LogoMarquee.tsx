@@ -6,7 +6,6 @@ import { useGSAP } from "@gsap/react";
 
 export default function LogoMarquee() {
   const containerRef = useRef<HTMLElement>(null);
-  const marqueeRef = useRef<HTMLDivElement>(null);
 
   const logos = [
     "Hammer Strength",
@@ -59,16 +58,19 @@ export default function LogoMarquee() {
       <p className="text-center text-xs sm:text-base font-bold text-gray-500 mb-6 sm:mb-8 uppercase tracking-[0.25em]">
         Equipped With Industry Gold Standards
       </p>
-      <div className="relative w-full flex overflow-x-hidden">
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#000000] via-transparent to-[#000000] pointer-events-none w-full"></div>
-        <div
-          ref={marqueeRef}
-          className="animate-marquee whitespace-nowrap flex items-center gap-10 sm:gap-20 md:gap-28"
-        >
+      
+      {/* Marquee Container with overflow-hidden and no scrollbars */}
+      <div className="relative w-full overflow-hidden no-scrollbar">
+        {/* Left & Right Gradient Fades */}
+        <div className="absolute left-0 top-0 bottom-0 z-10 w-16 sm:w-32 bg-gradient-to-r from-[#000000] to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 z-10 w-16 sm:w-32 bg-gradient-to-l from-[#000000] to-transparent pointer-events-none" />
+        
+        {/* Infinite 2-Set Track (-50% translation loop without gaps) */}
+        <div className="flex w-max animate-marquee items-center gap-10 sm:gap-20 md:gap-28 pr-10 sm:pr-20 md:pr-28">
           {logos.map((logo, index) => (
             <span
               key={`logo-1-${index}`}
-              className="brand-item text-2xl sm:text-4xl md:text-5xl font-black text-gray-700 uppercase tracking-tighter cursor-pointer transition-colors duration-150 inline-block px-3 py-1"
+              className="brand-item text-2xl sm:text-4xl md:text-5xl font-black text-gray-700 uppercase tracking-tighter cursor-pointer transition-colors duration-150 inline-block px-2 py-1 shrink-0"
             >
               {logo}
             </span>
@@ -76,7 +78,7 @@ export default function LogoMarquee() {
           {logos.map((logo, index) => (
             <span
               key={`logo-2-${index}`}
-              className="brand-item text-2xl sm:text-4xl md:text-5xl font-black text-gray-700 uppercase tracking-tighter cursor-pointer transition-colors duration-150 inline-block px-3 py-1"
+              className="brand-item text-2xl sm:text-4xl md:text-5xl font-black text-gray-700 uppercase tracking-tighter cursor-pointer transition-colors duration-150 inline-block px-2 py-1 shrink-0"
             >
               {logo}
             </span>
